@@ -20,7 +20,7 @@ const generateFixture = (name, children) => {
 };
 
 export default [
-  generateFixture("1-twitte", <Twitter />),
+  generateFixture("1-twitter", <Twitter />),
   generateFixture("2-calendar", <Calendar year={2021} month={1} />),
   generateFixture("3-timetable", <Timetable />),
   generateFixture("4-othero", <Othero />),
