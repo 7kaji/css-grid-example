@@ -3,6 +3,7 @@ import { DateTime } from "luxon";
 import styled, { css } from "styled-components";
 import { generateFilledCalendar } from "./getMonthDate";
 import { gridDebug } from "components/grid/debug";
+import holiday_jp from "@holiday-jp/holiday_jp";
 
 type CalendarProps = {
   year: number;
@@ -47,6 +48,9 @@ export const Month = styled.div`
 `;
 
 const getFontColor = (date: DateTime) => {
+  if (holiday_jp.isHoliday(new Date(`${date.year}/${date.month}/${date.day}`))) {
+    return "#fff";
+  }
   switch (date.weekday) {
     case 7:
     case 6:
@@ -56,6 +60,9 @@ const getFontColor = (date: DateTime) => {
   }
 };
 const getBgColor = (date: DateTime) => {
+  if (holiday_jp.isHoliday(new Date(`${date.year}/${date.month}/${date.day}`))) {
+    return "#f7481d";
+  }
   switch (date.weekday) {
     case 7:
       return "#f7481d";
