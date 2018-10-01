@@ -7,6 +7,7 @@ import { Calcurator } from "../5-calculator/Calculator";
 import { LearnCampus } from "../6-lean-canvas/LeanCanvas";
 import { Keyboard } from "../7-keyboard/Keyboard";
 import { Resume } from "../8-resume/Resume";
+import PasswordInputShow from "../9-password-input/PasswordInput";
 
 const Demo = ({ children }) => children;
 const generateFixture = (name, children) => {
@@ -27,5 +28,6 @@ export default [
   generateFixture("5-calculator", <Calcurator />),
   generateFixture("6-leancampus", <LearnCampus />),
   generateFixture("7-keyboard", <Keyboard />),
-  generateFixture("8-resume", <Resume />)
+  generateFixture("8-resume", <Resume />),
+  generateFixture("9-password", <PasswordInputShow />)
 ];
